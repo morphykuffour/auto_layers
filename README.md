@@ -7,7 +7,7 @@ If you are going to fork:\
 It relays on https://github.com/apmorton/pyhidapi and https://github.com/Infinidat/infi.systray so check the documentation especially for pyhidapi that needs extra steps to work.
 ## Warning
 I just started learning Python so read the code and be careful.\
-I'm not responsible of anything that might happen to you, your hardware or your software using this program.
+I'm not responsible for anything that might happen to you, your hardware or your software using this program.
 
 
 ## Demo
@@ -22,7 +22,7 @@ coming soon
 3 double click to pause or resume, the icon turns orange if paused\
 4 grab starts a timer, after selecting it put the device on the layer you want and focus the        application to associate them, you have 4 seconds before it'll be saved. If you need more time to change layer on your device you can pause before starting the grab process so that you only need to click on the application window and wait. You should see the icon change to the grab icon for a couple of seconds for confirmation.\
 5 remove is timed too, you just need to click it, focus on the application you want to remove and wait for the icon change of confirmation\
-6 usage at the same time with VIAL causes bad thing so if the process is detected it stops temporarly, even if it's not the foreground window, the icon turns red. You can add more application to this behaviour editing the block_list in the config.ini file, you'll also find a block_if_active list there to block auto layers only if those application are the active window.
+6 usage at the same time with VIAL causes bad thing so if the process is detected it stops temporarily, even if it's not the foreground window, the icon turns red. You can add more application to this behaviour editing the block_list in the config.ini file, you'll also find a block_if_active list there to block auto layers only if those application are the active window.
 ## Firmware modifications
 
 You need to add some code,
@@ -318,4 +318,4 @@ RAW_ENABLE = yes
 ```
 [sample rules.mk](https://github.com/itsvar8/qmk_firmware/blob/cstc40/keyboards/kprepublic/cstc40/keymaps/default/rules.mk)
 ## If you found it useful...
-...consider [donating](https://www.paypal.com/paypalme/itsvar8) so i can work more on things we both love, thanks!
+...consider [donating](https://www.paypal.com/paypalme/itsvar8) so I can work more on things we both love, thanks!
