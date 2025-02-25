@@ -1,3 +1,6 @@
+# hid>=1.0.7
 hid~=1.0.6
 psutil~=6.0.0
-infi.systray==0.1.12
+# infi.systray==0.1.12
+pyusb
+# Add other Python dependencies here

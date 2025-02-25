@@ -6,6 +6,9 @@ from dataclasses import fields, asdict
 from pathlib import Path
 from raw_hid import send_raw_report, REQUEST_IDS, list_qmk_devices
 from setup import Matches, ICONS, SysTrayIcon, active_window_process_name, WE_ARE_NOT_FRIENDS, list_all_processes
+import platform
+from typing import Dict, Set, Tuple
+import psutil
 
 
 class AutoLayers:
@@ -228,15 +231,31 @@ class AutoLayers:
         return False
 
 
-if __name__ == "__main__":
+def get_active_window():
+    """Get the currently active window name"""
+    try:
+        # This is a simplified version - you might want to add platform-specific code here
+        return psutil.Process().name()
+    except (psutil.NoSuchProcess, psutil.AccessDenied):
+        return None
+
+
+def main():
+    """Main entry point for autolayers"""
     # this is needed to find icons after using pyinstaller and not saving config.ini in temp
+    global CONFIG_FOLDER
     if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
         os.chdir(sys._MEIPASS)
         CONFIG_FOLDER = os.path.dirname(sys.executable)
     else:
         CONFIG_FOLDER = "."
 
+    print("AutoLayers starting...")
+    auto_layers = AutoLayers()
     while True:
-        auto_layers = AutoLayers()
         if not auto_layers.run():
             break
+
+
+if __name__ == "__main__":
+    main()
